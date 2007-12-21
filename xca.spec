@@ -19,6 +19,7 @@ Url:		http://www.hohnstaedt.de/xca/xca.html
 BuildRequires:	libqt-devel >= 2.2.4
 BuildRequires:	db-devel >= 3.3
 BuildRequires:	openssl-devel >= 0.9.6
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The Program uses a Berkeley db for storage and supports RSA keys,
