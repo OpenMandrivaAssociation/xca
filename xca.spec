@@ -8,10 +8,10 @@ Source0:	http://prdownloads.sourceforge.net/xca/%{name}-%{version}.tar.gz
 Source11:	%{name}-16x16.png
 Source12:	%{name}-32x32.png
 Source13:	%{name}-48x48.png
-#Patch0:		xca-qfont.patch
-#Patch1:		xca-0.5.1-gcc.patch
+Patch0:		xca-0.6.4-lib64.patch
 URL:		http://www.hohnstaedt.de/xca/xca.html
 BuildRequires:	qt4-devel
+BuildRequires:	qt4-linguist
 BuildRequires:	db-devel
 BuildRequires:	openssl-devel
 BuildRequires:	linuxdoc-tools
@@ -27,17 +27,16 @@ like PKCS#7, PKCS#12, PEM, DER, PKCS#8.
 
 %prep
 %setup -q
-#%patch0 -p1
-#%patch1 -p1
+%patch0 -p1 -b .lib64
 
 perl -n -i -e '$/="\r\n";chomp;print;print "\n"' COPYRIGHT
-perl -p -i -e 's@/lib/@/%{_lib}/@;s@/lib @/%{_lib} @' configure
+perl -pi -e 's,\/usr\/lib\/,%{_libdir},g' configure
 
 %build
 CFLAGS="$RPM_OPT_FLAGS -I%{qt4include}/Qt -fpermissive" \
 QTDIR="%{qt4dir}" \
 prefix=%{_prefix} ./configure
-make
+%make
 
 %install
 rm -rf %{buildroot}
