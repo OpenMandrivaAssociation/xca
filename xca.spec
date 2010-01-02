@@ -18,6 +18,7 @@ BuildRequires:	qt4-linguist
 BuildRequires:	db-devel
 BuildRequires:	openssl-devel
 BuildRequires:	linuxdoc-tools
+BuildRequires:	libltdl-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
