@@ -1,7 +1,7 @@
 Summary:	GUI for handling X509 certificates, RSA keys and PKCS#10 requests
 Name:		xca
-Version:	0.8.1
-Release:	%mkrel 2
+Version:	0.9.0
+Release:	%mkrel 1
 License:	BSD
 Group:		System/Servers
 Source0:	http://prdownloads.sourceforge.net/xca/%{name}-%{version}.tar.gz
@@ -10,8 +10,9 @@ Source12:	%{name}-32x32.png
 Source13:	%{name}-48x48.png
 Patch0:		xca-0.6.4-lib64.patch
 # Fedora patches
-Patch1:		xca-0.6.4-includes.patch
-Patch2:		xca-0.6.4-openssl10.patch
+# Patch1:		xca-0.6.4-includes.patch
+# Patch2:		xca-0.6.4-openssl10.patch
+Patch3:		xca-0.9.0-fprintf.patch
 URL:		http://www.hohnstaedt.de/xca/xca.html
 BuildRequires:	qt4-devel
 BuildRequires:	qt4-linguist
@@ -32,9 +33,9 @@ like PKCS#7, PKCS#12, PEM, DER, PKCS#8.
 %prep
 %setup -q
 %patch0 -p1 -b .lib64
-%patch1 -p1 -b .includes
-%patch2 -p1 -b .openssl10
-
+#patch1 -p1 -b .includes
+#patch2 -p1 -b .openssl10
+%patch3 -p0 -b .fprintf
 perl -n -i -e '$/="\r\n";chomp;print;print "\n"' COPYRIGHT
 perl -pi -e 's,\/usr\/lib\/,%{_libdir},g' configure
 
@@ -80,4 +81,4 @@ rm -rf %{buildroot}
 %{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1*
-
+%{_datadir}/mime/packages/xca.xml
