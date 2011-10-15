@@ -1,7 +1,7 @@
 Summary:	GUI for handling X509 certificates, RSA keys and PKCS#10 requests
 Name:		xca
 Version:	0.9.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	BSD
 Group:		System/Servers
 Source0:	http://prdownloads.sourceforge.net/xca/%{name}-%{version}.tar.gz
@@ -59,16 +59,16 @@ install -m644 %{SOURCE13} %{buildroot}%{_iconsdir}/hicolor/48x48/apps/%{name}.pn
 %clean
 rm -rf %{buildroot}
 
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%{update_icon_cache hicolor}
-%endif
+%if "%{distribution}" == "Mandriva Linux"
+        %if %mdkversion < 200900
+                %post
+                %{update_menus}
+                %{update_icon_cache hicolor}
 
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%{clean_icon_cache hicolor}
+                %postun
+                %{clean_menus}
+                %{clean_icon_cache hicolor}
+        %endif
 %endif
 
 %files
