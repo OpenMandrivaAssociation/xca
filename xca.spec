@@ -1,7 +1,7 @@
 Summary:	GUI for handling X509 certificates, RSA keys and PKCS#10 requests
 Name:		xca
-Version:	0.9.0
-Release:	%mkrel 2
+Version:	0.9.1
+Release:	%mkrel 1
 License:	BSD
 Group:		System/Servers
 Source0:	http://prdownloads.sourceforge.net/xca/%{name}-%{version}.tar.gz
@@ -35,7 +35,7 @@ like PKCS#7, PKCS#12, PEM, DER, PKCS#8.
 %patch0 -p1 -b .lib64
 #patch1 -p1 -b .includes
 #patch2 -p1 -b .openssl10
-%patch3 -p0 -b .fprintf
+#patch3 -p0 -b .fprintf
 perl -n -i -e '$/="\r\n";chomp;print;print "\n"' COPYRIGHT
 perl -pi -e 's,\/usr\/lib\/,%{_libdir},g' configure
 
