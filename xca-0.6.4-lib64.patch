@@ -1,0 +1,13 @@
+--- xca-0.9.0/configure	2010-08-29 10:28:32.000000000 +0200
++++ xca-0.9.0/configure.dlucio	2011-03-16 18:39:35.000000000 +0100
+@@ -108,6 +108,10 @@
+             add_lib "${dir}/${lib}" "${dbn}" "${suffix}"
+ 	    echo "Found: lib${dbn}.${suffix} at ${dir}/${lib}"
+             return 0
++          elif test -r "${dir}/${lib}/lib64${dbn}.${suffix}"; then
++            add_lib "${dir}/${lib}" "${dbn}" "${suffix}"
++           echo "Found: lib${dbn}.${suffix} at ${dir}/${lib}"
++            return 0
+ 	  fi
+ 	done
+       done

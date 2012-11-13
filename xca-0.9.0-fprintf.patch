@@ -1,0 +1,11 @@
+--- lib/func.cpp	2010-08-29 10:28:32.000000000 +0200
++++ lib/func.cpp.dlucio	2011-03-16 19:01:45.000000000 +0100
+@@ -305,7 +305,7 @@
+ 
+ 	while (int i = ERR_get_error() ) {
+ 		error += QString(ERR_error_string(i, NULL)) + "\n";
+-		fprintf(stderr, CCHAR(QString("OpenSSL error (%1:%2) : %3\n").
++		fprintf(stderr, "%s", CCHAR(QString("OpenSSL error (%1:%2) : %3\n").
+ 			arg(file).arg(line).arg(ERR_error_string(i, NULL))));
+ 	}
+ 	if (!error.isEmpty()) {
