@@ -14,7 +14,7 @@ BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5Gui)
 BuildRequires:	pkgconfig(Qt5Sql)
 BuildRequires:	pkgconfig(Qt5Widgets)
-BuildRequires:	qttools5
+BuildRequires:	qt5-qttools
 BuildRequires:	db-devel
 BuildRequires:	pkgconfig(openssl) >= 1.1
 BuildRequires:	linuxdoc-tools
