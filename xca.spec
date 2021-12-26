@@ -1,11 +1,11 @@
 Summary:	GUI for handling X509 certificates, RSA keys and PKCS#10 requests
 Name:		xca
-Version:	2.3.0
+Version:	2.4.0
 Release:	1
 License:	BSD
 Group:		System/Servers
 URL:		http://www.hohnstaedt.de/xca/xca.html
-Source0:	http://prdownloads.sourceforge.net/xca/%{name}-%{version}.tar.gz
+Source0:	https://github.com/chris2511/xca/releases/download/RELEASE.%{version}/xca-%{version}.tar.gz
 Source11:	%{name}-16x16.png
 Source12:	%{name}-32x32.png
 Source13:	%{name}-48x48.png
