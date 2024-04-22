@@ -15,6 +15,7 @@ BuildRequires:  qmake5
 BuildRequires:  cmake(Qt5LinguistTools)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5Gui)
+BuildRequires:	pkgconfig(Qt5Help)
 BuildRequires:	pkgconfig(Qt5Sql)
 BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	qt5-qttools
