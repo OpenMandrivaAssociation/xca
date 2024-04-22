@@ -1,6 +1,6 @@
 Summary:	GUI for handling X509 certificates, RSA keys and PKCS#10 requests
 Name:		xca
-Version:	2.4.0
+Version:	2.6.0
 Release:	1
 License:	BSD
 Group:		System/Servers
