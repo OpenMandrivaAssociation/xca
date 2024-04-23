@@ -12,6 +12,7 @@ Source13:	%{name}-48x48.png
 
 BuildRequires:	cmake
 BuildRequires:  qmake5
+BuildRequires:  qt5-assistant
 BuildRequires:  cmake(Qt5LinguistTools)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5Gui)
