@@ -4,7 +4,7 @@ Version:	2.6.0
 Release:	1
 License:	BSD
 Group:		System/Servers
-URL:		http://www.hohnstaedt.de/xca/xca.html
+URL:		https://www.hohnstaedt.de/xca/xca.html
 Source0:	https://github.com/chris2511/xca/releases/download/RELEASE.%{version}/xca-%{version}.tar.gz
 Source11:	%{name}-16x16.png
 Source12:	%{name}-32x32.png
